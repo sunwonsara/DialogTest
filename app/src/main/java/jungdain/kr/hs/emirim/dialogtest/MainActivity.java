@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 butDialog.setText(itemArr[i]); //항목이 클릭되었을때 버튼의 설정이 바뀜
             }
         });
-        dialog.setPositiveButton("OK", null); //null을 했으므로 버튼을 써도 아무 의미없음
+        dialog.setPositiveButton("OK!", null); //null을 했으므로 버튼을 써도 아무 의미없음
         dialog.show(); //보이게 반드시 설정해야 함
     }
 }
