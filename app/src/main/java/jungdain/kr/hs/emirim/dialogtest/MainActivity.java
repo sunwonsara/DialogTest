@@ -24,13 +24,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dialog.setTitle("첫번째 다이얼로그");
         dialog.setIcon(R.drawable.hart); //어플리케이션 홈화면에 나오는 아이콘
 //      dialog.setMessage("여기는 메세지를 쓰는 곳입니다.");
-        dialog.setItems(itemArr, new DialogInterface.OnClickListener() { //항목을 클릭했을 때, 버튼의 문자열이 바뀜 / 항목이 클릭되었을때 처리되는 클래스를 익명클래스로 만듬
+       /* dialog.setItems(itemArr, new DialogInterface.OnClickListener() { //항목을 클릭했을 때, 버튼의 문자열이 바뀜 / 항목이 클릭되었을때 처리되는 클래스를 익명클래스로 만듬
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                butDialog.setText(itemArr[i]); //항목이 클릭되었을때 버튼의 설정이 바뀜
+            }
+        });*/
+       //라디오 버튼 목록
+        dialog.setSingleChoiceItems(itemArr,0,new DialogInterface.OnClickListener() { //항목을 클릭했을 때, 버튼의 문자열이 바뀜 / 항목이 클릭되었을때 처리되는 클래스를 익명클래스로 만듬
             @Override
             public void onClick(DialogInterface dialog, int i) {
                 butDialog.setText(itemArr[i]); //항목이 클릭되었을때 버튼의 설정이 바뀜
             }
         });
-        dialog.setPositiveButton("OK!", null); //null을 했으므로 버튼을 써도 아무 의미없음
+//      dialog.setPositiveButton("OK!", null); //null을 했으므로 버튼을 써도 아무 의미없음
         dialog.show(); //보이게 반드시 설정해야 함
     }
 }
