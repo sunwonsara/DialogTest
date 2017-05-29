@@ -30,14 +30,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 butDialog.setText(itemArr[i]); //항목이 클릭되었을때 버튼의 설정이 바뀜
             }
         });*/
+
        //라디오 버튼 목록
-        dialog.setSingleChoiceItems(itemArr,0,new DialogInterface.OnClickListener() { //항목을 클릭했을 때, 버튼의 문자열이 바뀜 / 항목이 클릭되었을때 처리되는 클래스를 익명클래스로 만듬
+        /* dialog.setSingleChoiceItems(itemArr,0,new DialogInterface.OnClickListener() { //항목을 클릭했을 때, 버튼의 문자열이 바뀜 / 항목이 클릭되었을때 처리되는 클래스를 익명클래스로 만듬
             @Override
             public void onClick(DialogInterface dialog, int i) {
                 butDialog.setText(itemArr[i]); //항목이 클릭되었을때 버튼의 설정이 바뀜
             }
-        });
+        });*/
+
+//      체크 박스 목록
+//      선택 여부 배열
+        boolean[] checkedItems={true,false,true,false};
+        dialog.setMultiChoiceItems(itemArr, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i, boolean b) {
+                        if(b) //클릭했을 때 체크 되어있으면 true, 안되어있으면 false
+                        butDialog.setText(itemArr[i]);
+
+                    }
+                });
+
 //      dialog.setPositiveButton("OK!", null); //null을 했으므로 버튼을 써도 아무 의미없음
-        dialog.show(); //보이게 반드시 설정해야 함
+                dialog.show(); //보이게 반드시 설정해야 함
     }
 }
